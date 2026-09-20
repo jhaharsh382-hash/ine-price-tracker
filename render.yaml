@@ -2,6 +2,7 @@ services:
   - type: web
     name: ine-price-tracker-api
     runtime: node
+    plan: free
     rootDir: backend
     buildCommand: npm install && npx playwright install chromium
     startCommand: npm start
