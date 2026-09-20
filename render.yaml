@@ -33,8 +33,7 @@ services:
   - type: web
     name: ine-price-tracker-web
     runtime: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
+    buildCommand: npm --prefix frontend install && npm --prefix frontend run build
     staticPublishPath: frontend/dist
     envVars:
       - key: VITE_API_BASE_URL
