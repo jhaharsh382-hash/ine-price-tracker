@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     rootDir: backend
-    buildCommand: npm install && npx playwright install chromium
+    buildCommand: npm install && PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install chromium
     startCommand: npm start
     envVars:
       - key: NODE_ENV
@@ -19,6 +19,8 @@ services:
         generateValue: true
       - key: HEADLESS
         value: true
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: "0"
       - key: SCRAPE_MAX_RETRIES
         value: 4
       - key: SCRAPE_TIMEOUT_MS
