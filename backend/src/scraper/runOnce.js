@@ -7,7 +7,7 @@ const logger = require('../utils/logger');
 const { scrapeDueProducts } = require('../services/scrapeService');
 
 (async () => {
-  const headed = process.env.HEADLESS === 'false';
+  const headed = process.env.HEADLESS === 'false' || process.argv.includes('--headed');
   logger.info(`Starting ${headed ? 'HEADED' : 'headless'} scrape run...`);
   try {
     const results = await scrapeDueProducts({ headed, force: true });
