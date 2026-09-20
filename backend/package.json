@@ -1,0 +1,31 @@
+{
+  "name": "ine-price-tracker-backend",
+  "version": "1.0.0",
+  "description": "Backend for INE Product Price Tracker - scheduled scraping, price history, scrape logging",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "scrape:once": "node src/scraper/runOnce.js",
+    "scrape:headed": "HEADLESS=false node src/scraper/runOnce.js",
+    "test": "node --test src/scraper/__tests__/*.test.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.0",
+    "@supabase/supabase-js": "^2.45.4",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "node-fetch": "^2.7.0",
+    "playwright": "^1.47.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

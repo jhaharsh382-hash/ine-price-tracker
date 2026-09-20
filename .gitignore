@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.lognode_modules/
+backend/node_modules/
+frontend/node_modules/
+.env
+backend/.env
+frontend/.env
+dist/
+backend/dist/
+frontend/dist/
+coverage/
+*.log
+.DS_Store

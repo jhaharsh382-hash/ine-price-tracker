@@ -1,0 +1,14 @@
+{
+  "name": "ine-price-tracker",
+  "private": true,
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev -- --host 0.0.0.0",
+    "dev": "node scripts/dev.js",
+    "test": "npm --prefix backend run test",
+    "build": "npm --prefix frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

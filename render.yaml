@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: ine-price-tracker-api
+    env: node
+    rootDir: backend
+    buildCommand: npm install && npx playwright install chromium
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: STORE_BASE_URL
+        value: https://demo.inelabteamdev.com
+      - key: CRON_SECRET
+        generateValue: true
+      - key: HEADLESS
+        value: true
+      - key: SCRAPE_MAX_RETRIES
+        value: 4
+      - key: SCRAPE_TIMEOUT_MS
+        value: 20000
+      - key: SCRAPE_CONCURRENCY
+        value: 3
+      - key: DEFAULT_SCRAPE_FREQUENCY_HOURS
+        value: 2
+      - key: CORS_ORIGIN
+        sync: false
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: ALERTS_FROM_EMAIL
+        value: alerts@yourdomain.com
+
+  - type: static_site
+    name: ine-price-tracker-web
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        sync: false
