@@ -29,12 +29,6 @@ services:
         value: 2
       - key: CORS_ORIGIN
         sync: false
-      - key: SENDGRID_API_KEY
-        sync: false
-      - key: ALERTS_FROM_EMAIL
-        sync: false
-      - key: ALERT_RECIPIENT_EMAIL
-        sync: false
 
   - type: web
     name: ine-price-tracker-web
