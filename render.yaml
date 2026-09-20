@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: signal-price-tracker-api
+    name: ine-price-tracker-api
     env: node
     rootDir: backend
     buildCommand: npm install && npx playwright install chromium
@@ -34,7 +34,7 @@ services:
         value: alerts@yourdomain.com
 
   - type: web
-    name: signal-price-tracker-web
+    name: ine-price-tracker-web
     runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
